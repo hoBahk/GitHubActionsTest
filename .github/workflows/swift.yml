@@ -6,14 +6,27 @@ on:
   pull_request:
     branches: [ "main" ]
 
+
 jobs:
   build:
 
     runs-on: macos-latest
 
+    env:
+      WORKSPACE: GitHubActionsTest.xcworkspace
+      PROJECT: GitHubActionsTest.xcodeproj
+      SCHEME: GitHubActionsTest
+      CONFIGURATION: release
+      DESTINATION: platform=iOS Simulator,name=iPhone 13,OS=latest
+
     steps:
     - uses: actions/checkout@v3
+    - name: Selecct Xcode
+      run: sudo xcode-select -switch /Applications/Xcode.app
     - name: Build
-      run: swift build -v
+        run: xcodebuild clean build
+            -scheme "$SCHEME"
+            -configuration "$CONFIGURATION"
+            -destination "$DESTINATION"
 #    - name: Run tests
 #      run: swift test -v
