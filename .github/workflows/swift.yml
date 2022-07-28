@@ -20,10 +20,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
     - name: Selecct Xcode
       run: sudo xcode-select -switch /Applications/Xcode.app
     - name: Build
-        run: xcodebuild build
-            -project: "$PROJECT"
+      run: xcodebuild build
+            -project "$PROJECT"
 #    - name: Run tests
 #      run: swift test -v
