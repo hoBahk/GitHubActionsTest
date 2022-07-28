@@ -25,7 +25,8 @@ jobs:
       run: sudo xcode-select -switch /Applications/Xcode.app
     - name: Build
       run: xcodebuild build -allowProvisioningUpdates
-            -project "$PROJECT"
-            -destination "$DESTINATION"
+        -project "$PROJECT"
+        -scheme "$SCHEME"
+        -destination "$DESTINATION"
 #    - name: Run tests
 #      run: swift test -v
