@@ -23,7 +23,7 @@ jobs:
     - name: Selecct Xcode
       run: sudo xcode-select -switch /Applications/Xcode.app
     - name: Build
-        run: xcodebuild clean build test
+        run: xcodebuild clean
             -project: "$PROJECT"
             -scheme "$SCHEME"
             -configuration "$CONFIGURATION"
