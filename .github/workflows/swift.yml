@@ -25,6 +25,7 @@ jobs:
       run: sudo xcode-select -switch /Applications/Xcode.app
     - name: Build
         run: xcodebuild clean build test
+            -project: "$PROJECT"
             -scheme "$SCHEME"
             -configuration "$CONFIGURATION"
             -destination "$DESTINATION"
