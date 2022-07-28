@@ -13,7 +13,7 @@ jobs:
     runs-on: macos-latest
 
     env:
-      PROJECT: GitHubActionsTest.xcodeproj
+      PROJECT: GitHubActionsTest/GitHubActionsTest.xcodeproj
       SCHEME: GitHubActionsTest
       CONFIGURATION: release
       DESTINATION: platform=iOS Simulator,name=iPhone 13,OS=latest
@@ -23,11 +23,7 @@ jobs:
     - name: Selecct Xcode
       run: sudo xcode-select -switch /Applications/Xcode.app
     - name: Build
-        run: xcodebuild clean test
+        run: xcodebuild build
             -project: "$PROJECT"
-            -scheme "$SCHEME"
-            -configuration "$CONFIGURATION"
-            -destination "$DESTINATION"
-            -enableCodeCoverage YES | xcpretty --color
 #    - name: Run tests
 #      run: swift test -v
