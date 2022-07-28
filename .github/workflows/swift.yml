@@ -24,7 +24,7 @@ jobs:
     - name: Selecct Xcode
       run: sudo xcode-select -switch /Applications/Xcode.app
     - name: Build
-      ren: swift build
+      run: swift build
 #      run: xcodebuild build
 #            -project "$PROJECT"
 #    - name: Run tests
