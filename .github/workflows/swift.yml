@@ -13,7 +13,7 @@ jobs:
     runs-on: macos-latest
 
     env:
-      PROJECT: GitHubActionsTest/GitHubActionsTest.xcodeproj
+      PROJECT: GitHubActionsTest.xcodeproj
       SCHEME: GitHubActionsTest
       CONFIGURATION: release
       DESTINATION: platform=iOS Simulator,name=iPhone 13,OS=latest
