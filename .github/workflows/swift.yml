@@ -26,5 +26,6 @@ jobs:
     - name: Build
       run: xcodebuild build -allowProvisioningUpdates
             -project "$PROJECT"
+            -destination "$DESTINATION"
 #    - name: Run tests
 #      run: swift test -v
