@@ -13,7 +13,6 @@ jobs:
     runs-on: macos-latest
 
     env:
-      WORKSPACE: GitHubActionsTest.xcworkspace
       PROJECT: GitHubActionsTest.xcodeproj
       SCHEME: GitHubActionsTest
       CONFIGURATION: release
@@ -29,5 +28,6 @@ jobs:
             -scheme "$SCHEME"
             -configuration "$CONFIGURATION"
             -destination "$DESTINATION"
+            -enableCodeCoverage YES | xcpretty --color
 #    - name: Run tests
 #      run: swift test -v
