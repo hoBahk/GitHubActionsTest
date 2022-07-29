@@ -1,5 +1,7 @@
 app_identifier("doinglab.DietDiaryAI") # The bundle identifier of your app
 apple_id(ENV["APPLE_ID"]) # Your Apple email address
+ENV["FASTLANE_USER"] = ENV["APPLE_ID"]
+ENV["FASTLANE_PASSWORD"] = ENV["APPLE_PASSWORD"]
 # team_name("DoingLAB Inc.")
 
 
