@@ -20,14 +20,7 @@ platform :ios do
   lane :build do
     get_certificates
     get_provisioning_profile
-#    increment_build_number(xcodeproj: "GitHubActionsTest.xcodeproj")
-#    build_app(
-#		project: "GitHubActionsTest.xcodeproj", 
-#		scheme: "GitHubActionsTest",
-#		xcargs: "-allowProvisioningUpdates"
-#		)
 
-#    clear_derived_data
     gym(
 	xcargs: "-allowProvisioningUpdates",
 	project: "GitHubActionsTest.xcodeproj",
