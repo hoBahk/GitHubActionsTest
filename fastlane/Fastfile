@@ -21,18 +21,18 @@ platform :ios do
     get_certificates
     get_provisioning_profile
 #    increment_build_number(xcodeproj: "GitHubActionsTest.xcodeproj")
-    build_app(
-		project: "GitHubActionsTest.xcodeproj", 
-		scheme: "GitHubActionsTest",
-		xcargs: "-allowProvisioningUpdates"
-		)
+#    build_app(
+#		project: "GitHubActionsTest.xcodeproj", 
+#		scheme: "GitHubActionsTest",
+#		xcargs: "-allowProvisioningUpdates"
+#		)
 
 #    clear_derived_data
-#    gym(
-#	xcargs: "-allowProvisioningUpdates",
-#	project: "GitHubActionsTest.xcodeproj",
-#	scheme: "GitHubActionsTest"
-#	)
+    gym(
+	xcargs: "-allowProvisioningUpdates",
+	project: "GitHubActionsTest.xcodeproj",
+	scheme: "GitHubActionsTest"
+	)
 
   error do |lane, exception, options|
     slack(
