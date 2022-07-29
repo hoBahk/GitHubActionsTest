@@ -23,10 +23,9 @@ platform :ios do
 
     clear_derived_data
     gym(
+	xcargs: "-allowProvisioningUpdates",
 	project: "GitHubActionsTest.xcodeproj",
-	scheme: "GitHubActionsTest",
-	clean: true,
-	xcargs: "-allowProvisioningUpdates"
+	scheme: "GitHubActionsTest"
 	)
     # add actions here: https://docs.fastlane.tools/actions
   end
