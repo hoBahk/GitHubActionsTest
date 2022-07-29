@@ -32,7 +32,7 @@ jobs:
 #      with:
 #        ruby-version: ${{ matrix.ruby }}
     - run: brew install fastlane
-    - run: pod install
+#    - run: pod install
     - run: fastlane build
     
     
