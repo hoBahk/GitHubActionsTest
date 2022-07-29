@@ -26,7 +26,7 @@ platform :ios do
 	project: "GitHubActionsTest.xcodeproj",
 	scheme: "GitHubActionsTest",
 	clean: true,
-	xcargs: "-allowProvisioningUpdates",
+	xcargs: "-allowProvisioningUpdates"
 	)
     # add actions here: https://docs.fastlane.tools/actions
   end
