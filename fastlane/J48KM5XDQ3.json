@@ -1,0 +1,8 @@
+
+{
+  "key_id": "J48KM5XDQ3",
+  "issuer_id": "69a6de92-edca-47e3-e053-5b8c7c11a4d1",
+  "key": "-----BEGIN PRIVATE KEY-----MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgTUaU6YMkQSjVidbDZEOL1bkXwQBFam6M5wEQ2n3935igCgYIKoZIzj0DAQehRANCAAR4gxSMyaPVslM9VUT7Yh+8o/kqzt8CgT5hbGNtEubkC/71J5ec/Nb3ZIIrInexMhX9C0tpoJpJh7c1HnXJitbx-----END PRIVATE KEY-----",
+  "duration": 1200,
+  "in_house": false
+}
