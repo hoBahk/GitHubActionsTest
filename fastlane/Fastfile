@@ -22,8 +22,8 @@ API_PRIVATE_KEY = ENV["API_PRIVATE_KEY"]
 platform :ios do
   desc "Description of what the lane does"
   lane :build do
-#    get_certificates
-#    get_provisioning_profile
+    get_certificates
+    get_provisioning_profile
 
 
 #     app_store_connect_api_key(

@@ -1,4 +1,4 @@
-app_identifier("doinglab.DietDiaryAI") # The bundle identifier of your app
+app_identifier("com.doinglab.NextDietCamera-GithubAction") # The bundle identifier of your app
 apple_id(ENV["APPLE_ID"]) # Your Apple email address
 ENV["FASTLANE_USER"] = ENV["APPLE_ID"]
 team_name("DoingLAB Inc.")
