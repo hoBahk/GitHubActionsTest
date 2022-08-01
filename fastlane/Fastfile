@@ -19,6 +19,8 @@ API_KEY_ID = ENV["API_KEY_ID"]
 API_ISSUER_ID = ENV["API_ISSUER_ID"]
 API_PRIVATE_KEY = ENV["API_PRIVATE_KEY"]
 
+ENV["FASTLANE_PASSWORD"] = ENV["FASTLANE_PASSWORD_FOR"]
+
 platform :ios do
   desc "Description of what the lane does"
   lane :build do

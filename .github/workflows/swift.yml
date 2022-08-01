@@ -28,8 +28,7 @@ jobs:
 #    - run: pod install
     - run: fastlane build
       env:
-        FASTLANE_PASSWORD_FOR = ${{ secrets.FASTLANE_PASSWORD }}
-    
+        FASTLANE_PASSWORD_FOR: ${{ secrets.FASTLANE_PASSWORD }}
     
 #    - name: Selecct Xcode
 #      run: sudo xcode-select -switch /Applications/Xcode.app
