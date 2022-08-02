@@ -33,12 +33,6 @@ platform :ios do
 #    get_certificates
 #    get_provisioning_profile
 
-#    unlock_keychain(
-#  	path: "/Users/bagbyeongho/Library/Keychains/login.keychain",
-#	password: "1056813q",
-#  	set_default: true
-#    )
-
     match(type: "development")
 
     gym(
