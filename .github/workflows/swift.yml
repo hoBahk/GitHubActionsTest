@@ -29,11 +29,11 @@ jobs:
     - name: Selecct Xcode
       run: sudo xcode-select -switch /Applications/Xcode.app
       
-#    - name: Setup ruby
-#      uses: ruby/setup-ruby@v1
-#      with:
-#        ruby-version: 2.7.2
-#        bundler-cache: true
+    - name: Setup ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7.2
+        bundler-cache: true
         
     - run: brew install fastlane
 #    - run: pod install
