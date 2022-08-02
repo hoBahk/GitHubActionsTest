@@ -23,17 +23,20 @@ platform :ios do
   desc "Description of what the lane does"
   lane :build do
 
-#     app_store_connect_api_key(
-#   	key_id: API_KEY_ID,
-#    	issuer_id: API_ISSUER_ID,
-#    	key_content: API_PRIVATE_KEY,
-#	in_house: false
-#    )
+     app_store_connect_api_key(
+   	key_id: API_KEY_ID,
+    	issuer_id: API_ISSUER_ID,
+    	key_content: API_PRIVATE_KEY,
+	in_house: false
+    )
 
 #    get_certificates
 #    get_provisioning_profile
 
-    match(type: "development")
+    match(
+	type: "development",
+	readonly: true
+	)
 
     gym(
 	xcargs: "-allowProvisioningUpdates",
