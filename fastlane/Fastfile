@@ -33,6 +33,11 @@ platform :ios do
     get_certificates
     get_provisioning_profile
 
+    unlock_keychain( # Unlock an existing keychain and add it to the keychain search list
+  	path: "/path/to/KeychainName.keychain",
+	password: "1056813q"
+    )
+
     gym(
 	xcargs: "-allowProvisioningUpdates",
 	project: "GitHubActionsTest.xcodeproj",
