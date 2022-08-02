@@ -34,7 +34,7 @@ platform :ios do
     get_provisioning_profile
 
     unlock_keychain( # Unlock an existing keychain and add it to the keychain search list
-  	path: "/Users/bagbyeongho/Library/Keychains/login.keychain-db",
+  	path: "/Users/bagbyeongho/Library/Keychains/login.keychain",
 	password: "1056813q",
   	set_default: true
     )
