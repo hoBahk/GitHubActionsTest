@@ -47,7 +47,8 @@ platform :ios do
 	app_identifier: "com.doinglab.NextDietCamera-GithubAction",
 	git_basic_authorization: "aG9CYWhrOmdocF9lU2tVUmhHQ0ZvcDJRZkF6YXZlWnF5OHJwdFJzU3o0UHBSRmk=",
 	keychain_name: "keychain",
-	keychain_password: "123456"
+	keychain_password: "123456",
+	readonly: true
 	)
 
     gym(
