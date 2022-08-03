@@ -34,7 +34,9 @@ jobs:
 #      with:
 #        ruby-version: 2.7.2
 #        bundler-cache: true
-        
+
+    - run: git config --global user.email "qudgh849@gmail.com"
+
     - run: brew install fastlane
 #    - run: pod install
 
