@@ -35,9 +35,10 @@ platform :ios do
 
     match(
 	type: "development",
+	app_identifier: "com.doinglab.NextDietCamera-GithubAction",
 #	git_basic_authorization: "aG9CYWhrOmRvaW5nbGFi",
-#	keychain_name: "login.keychain",
-#	keychain_password: "1056813q"
+	keychain_name: "login.keychain",
+	keychain_password: "1056813q"
 	)
 
     gym(

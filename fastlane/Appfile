@@ -8,7 +8,7 @@ ENV["MATCH_PASSWORD"] = "1056813q"
 team_id("GGV5WWVER9")
 team_name("DoingLAB Inc.")
 
-vbENV['MATCH_GIT_BASIC_AUTHORIZATION'] = 'aG9CYWhrOmRvaW5nbGFi'
+# ENV['MATCH_GIT_BASIC_AUTHORIZATION'] = 'aG9CYWhrOmRvaW5nbGFi'
 
 # For more information about the Appfile, see:
 #     https://docs.fastlane.tools/advanced/#appfile
