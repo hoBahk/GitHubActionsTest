@@ -34,8 +34,7 @@ platform :ios do
 #    get_provisioning_profile
 
     match(
-	type: "development",
-	readonly: true
+	type: "development"
 	)
 
     gym(
