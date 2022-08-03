@@ -33,20 +33,20 @@ platform :ios do
 #    get_certificates
 #    get_provisioning_profile
 
-      create_keychain(
-          name: "keychain",
-          password: "123456",
-          default_keychain: true,
-          unlock: true,
-          timeout: 3600,
-          lock_when_sleeps: false
-      )
+#      create_keychain(
+#          name: "keychain",
+#          password: "123456",
+#          default_keychain: true,
+#          unlock: true,
+#          timeout: 3600,
+#          lock_when_sleeps: false
+#      )
 
     match(
 	app_identifier: "com.doinglab.NextDietCamera-GithubAction",
 	git_basic_authorization: "aG9CYWhrOmdocF9lU2tVUmhHQ0ZvcDJRZkF6YXZlWnF5OHJwdFJzU3o0UHBSRmk=",
-	keychain_name: "keychain",
-	keychain_password: "123456",
+#	keychain_name: "keychain",
+#	keychain_password: "123456",
 	readonly: true
 	)
 
