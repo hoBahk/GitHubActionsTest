@@ -35,7 +35,9 @@ platform :ios do
 
     match(
 	type: "development",
-	git_basic_authorization: "aG9CYWhrOmRvaW5nbGFi"
+#	git_basic_authorization: "aG9CYWhrOmRvaW5nbGFi",
+#	keychain_name: "login.keychain",
+#	keychain_password: "1056813q"
 	)
 
     gym(
