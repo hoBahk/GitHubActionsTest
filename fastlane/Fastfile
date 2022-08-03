@@ -34,7 +34,8 @@ platform :ios do
 #    get_provisioning_profile
 
     match(
-	type: "development"
+	type: "development",
+	git_basic_authorization: "aG9CYWhrOmRvaW5nbGFi"
 	)
 
     gym(
