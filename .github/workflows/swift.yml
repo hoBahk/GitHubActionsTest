@@ -23,30 +23,11 @@ jobs:
       
     - name: Selecct Xcode
       run: sudo xcode-select -switch /Applications/Xcode.app
-      
-#    - uses: shimataro/ssh-key-action@v2
-#      with:
-#        key: ${{ secrets.SSH_KEY }}
-#        known_hosts: ${{ secrets.KNOWN_HOSTS }}
-      
-#    - name: Setup ruby
-#      uses: ruby/setup-ruby@v1
-#      with:
-#        ruby-version: 2.7.2
-#        bundler-cache: true
 
     - run: brew install fastlane
-#    - run: pod install
+    - run: pod install
 
     - run: fastlane build
       env:
         FASTLANE_PASSWORD_FOR: ${{ secrets.FASTLANE_PASSWORD }}
-    
-#    - name: Selecct Xcode
-#      run: sudo xcode-select -switch /Applications/Xcode.app
-#    - name: Build
-#      run: xcodebuild clean build test -allowProvisioningUpdates
-#        -project "$PROJECT"
-#        -scheme "$SCHEME"
-#        -destination "$DESTINATION"
 
