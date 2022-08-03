@@ -42,7 +42,7 @@ platform :ios do
 
     gym(
 	xcargs: "-allowProvisioningUpdates",
-	project: "GitHubActionsTest.xcodeproj",
+	workspace: "GitHubActionsTest.xcworkspace",
 	scheme: "GitHubActionsTest"
 	)
 
