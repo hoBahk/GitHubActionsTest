@@ -54,11 +54,24 @@ platform :ios do
 
   end
 
-  lane :upload_testflight do
-	
-    build
-    increment_build_number(xcodeproj: "Milkyway.xcodeproj")
-    upload_to_testflight
 
+  lane :upload_testflight do
+    build
+    increment_build_number(xcodeproj: "GitHubActionsTest.xcodeproj")
+    upload_to_testflight
+#    version = get_version_number
+#    noti_slack({"version": version })
   end
+
+
+#  lane :noti_slack do |options| 
+#    slack(
+#      message: "앱이 testFlight에 성공적으로 업로드 되었습니다.",
+#      channel: "#ios-team",
+#      slack_url: [슬랙hook주소],
+#      payload: {
+#        "Version": options[:version]
+#      }
+#    )
+#  end
 end
