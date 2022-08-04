@@ -23,6 +23,12 @@ platform :ios do
   desc "Description of what the lane does"
   lane :build do
 
+   app_store_connect_api_key(
+     key_id: API_KEY_ID,
+     issuer_id: API_ISSUER_ID,
+     key_content: API_PRIVATE_KEY
+   )
+
    create_keychain(
       name: "keychain",
       password: "123456",
@@ -57,9 +63,7 @@ platform :ios do
   lane :upload_testflight do
     build
     increment_build_number(xcodeproj: "GitHubActionsTest.xcodeproj")
-
-    pilot(api_key_path: "fastlane/J48KM5XDQ3.json")
-#    upload_to_testflight
+    upload_to_testflight
 #    version = get_version_number
 #    noti_slack({"version": version })
   end
