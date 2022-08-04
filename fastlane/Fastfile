@@ -57,7 +57,9 @@ platform :ios do
   lane :upload_testflight do
     build
     increment_build_number(xcodeproj: "GitHubActionsTest.xcodeproj")
-    upload_to_testflight
+
+    pilot(api_key_path: "fastlane/J48KM5XDQ3.json")
+#    upload_to_testflight
 #    version = get_version_number
 #    noti_slack({"version": version })
   end
