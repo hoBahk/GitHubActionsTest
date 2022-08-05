@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleIconName</key>
-	<string>GitHubActionsSample</string>
+	<string>AppIcon</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.doinglab.NextDietCamera-GithubAction</string>
 	<key>DeployPhase</key>
