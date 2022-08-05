@@ -17,6 +17,7 @@ jobs:
       SCHEME: GitHubActionsTest
       CONFIGURATION: release
       DESTINATION: platform=iOS Simulator,name=iPhone 13,OS=latest
+      MATCH_GIT_TOKEN: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
 
     steps:
     - uses: actions/checkout@v3
@@ -31,7 +32,7 @@ jobs:
       run: pod install
 
     - name: app_build
-      run: fastlane build
+      run: fastlane app_build
       env:
         FASTLANE_PASSWORD_FOR: ${{ secrets.FASTLANE_PASSWORD }}
         
