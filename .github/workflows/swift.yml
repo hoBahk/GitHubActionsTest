@@ -19,6 +19,7 @@ jobs:
       DESTINATION: platform=iOS Simulator,name=iPhone 13,OS=latest
       MATCH_GIT_TOKEN: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
       MATCH_PW: ${{ secrets.MATCH_PW }}
+      FASTLANE_PASSWORD_FOR: ${{ secrets.FASTLANE_PASSWORD }}
       
     steps:
     - uses: actions/checkout@v3
@@ -32,10 +33,8 @@ jobs:
     - name: pod install
       run: pod install
 
-    - name: app_build
-      run: fastlane app_build
-      env:
-        FASTLANE_PASSWORD_FOR: ${{ secrets.FASTLANE_PASSWORD }}
+#    - name: app_build
+#      run: fastlane app_build
         
     - name: Upload TestFlight
       run: fastlane upload_testflight

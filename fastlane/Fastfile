@@ -55,13 +55,15 @@ platform :ios do
 
   lane :upload_testflight do
 
+  increment_build_number
+
+   app_build
+
   app_store_connect_api_key(
     key_id: ENV["API_KEY_ID"],
     issuer_id: ENV["API_ISSUER_ID"],
     key_content: ENV["API_PRIVATE_KEY"]
   )
-
-  increment_build_number
 
   upload_to_testflight
 
