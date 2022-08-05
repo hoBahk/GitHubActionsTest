@@ -1,14 +1,13 @@
-app_identifier("com.doinglab.NextDietCamera-GithubAction") # The bundle identifier of your app
-apple_id(ENV["APPLE_ID"]) # Your Apple email address
-ENV["FASTLANE_USER"] = ENV["APPLE_ID"]
-ENV["FASTLANE_PASSWORD"] = ENV["FASTLANE_PASSWORD_FOR"]
-ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"] = ENV["FASTLANE_PASSWORD_FOR"]
-ENV["MATCH_PASSWORD"] = "1056813q"
+app_identifier("com.doinglab.NextDietCamera-GithubAction")
+apple_id("bh.bahk@doinglab.com")
 
-team_id("GGV5WWVER9")
+# team_id("GGV5WWVER9")
 team_name("DoingLAB Inc.")
 
+# ENV["FASTLANE_USER"] = ENV["APPLE_ID"]
+ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"] = ENV["FASTLANE_PASSWORD_FOR"]
 ENV["MATCH_GIT_BASIC_AUTHORIZATION"] = "aG9CYWhrOmdocF9lU2tVUmhHQ0ZvcDJRZkF6YXZlWnF5OHJwdFJzU3o0UHBSRmk="
 
-# For more information about the Appfile, see:
-#     https://docs.fastlane.tools/advanced/#appfile
+
+# ENV["MATCH_PASSWORD"] = "1056813q"
+# ENV["FASTLANE_PASSWORD"] = ENV["FASTLANE_PASSWORD_FOR"]

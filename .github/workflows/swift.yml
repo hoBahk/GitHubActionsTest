@@ -24,14 +24,20 @@ jobs:
     - name: Selecct Xcode
       run: sudo xcode-select -switch /Applications/Xcode.app
 
+    - name: install fastlane
     - run: brew install fastlane
+    
+    - name: pod install
     - run: pod install
 
-#    - run: fastlane build
-#      env:
-#        FASTLANE_PASSWORD_FOR: ${{ secrets.FASTLANE_PASSWORD }}
-        
-    - run: fastlane upload_testflight
+    - name: app_build
+    - run: fastlane build
       env:
         FASTLANE_PASSWORD_FOR: ${{ secrets.FASTLANE_PASSWORD }}
-
+        
+#    - name: Upload TestFlight
+#    - run: fastlane upload_testflight
+#      env:
+#        API_KEY_ID: ${{ secrets.API_KEY_ID }}
+#        API_ISSUER_ID: ${{ secrets.API_ISSUER_ID }}
+#        API_PRIVATE_KEY: ${{ secrets.API_PRIVATE_KEY }}
