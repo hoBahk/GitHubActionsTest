@@ -61,7 +61,7 @@ platform :ios do
     key_content: ENV["API_PRIVATE_KEY"]
   )
 
-  increment_build_number(xcodeproj: "GitHubActionsTest.xcodeproj")
+  increment_build_number
 
   upload_to_testflight
 
