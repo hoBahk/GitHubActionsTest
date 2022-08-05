@@ -18,6 +18,7 @@ jobs:
       CONFIGURATION: release
       DESTINATION: platform=iOS Simulator,name=iPhone 13,OS=latest
       MATCH_GIT_TOKEN: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
+      MATCH_PW: ${{ secrets.MATCH_PW }}
 
     steps:
     - uses: actions/checkout@v3
