@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleIconName</key>
+	<string>GitHubActionsSample</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.doinglab.NextDietCamera-GithubAction</string>
 	<key>DeployPhase</key>
 	<string>$(DEPLOY_PHASE)</string>
 </dict>
