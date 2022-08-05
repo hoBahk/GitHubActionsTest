@@ -38,7 +38,7 @@ jobs:
         FASTLANE_PASSWORD_FOR: ${{ secrets.FASTLANE_PASSWORD }}
         
     - name: Upload TestFlight
-    - run: fastlane upload_testflight
+      run: fastlane upload_testflight
       env:
         API_KEY_ID: ${{ secrets.API_KEY_ID }}
         API_ISSUER_ID: ${{ secrets.API_ISSUER_ID }}
