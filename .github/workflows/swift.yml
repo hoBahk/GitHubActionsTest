@@ -33,12 +33,12 @@ jobs:
     - name: pod install
       run: pod install
 
-#    - name: app_build
-#      run: fastlane app_build
+    - name: app_build
+      run: fastlane app_build
         
-    - name: Upload TestFlight
-      run: fastlane upload_testflight
-      env:
-        API_KEY_ID: ${{ secrets.API_KEY_ID }}
-        API_ISSUER_ID: ${{ secrets.API_ISSUER_ID }}
-        API_PRIVATE_KEY: ${{ secrets.API_PRIVATE_KEY }}
+#    - name: Upload TestFlight
+#      run: fastlane upload_testflight
+#      env:
+#        API_KEY_ID: ${{ secrets.API_KEY_ID }}
+#        API_ISSUER_ID: ${{ secrets.API_ISSUER_ID }}
+#        API_PRIVATE_KEY: ${{ secrets.API_PRIVATE_KEY }}
