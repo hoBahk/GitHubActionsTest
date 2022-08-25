@@ -38,7 +38,7 @@ jobs:
       run: pod install
 
     - name: app_build
-      run: fastlane app_build
+      run: fastlane increment_build_number_do
         
 #    - name: Upload TestFlight
 #      run: fastlane upload_testflight
