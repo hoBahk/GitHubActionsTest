@@ -11,9 +11,6 @@ jobs:
   build:
 
     runs-on: macos-latest
-    strategy:
-      matrix:
-        ruby: [ '2.7' ]
 
     env:
       PROJECT: GitHubActionsTest.xcodeproj
@@ -28,8 +25,10 @@ jobs:
     - uses: actions/checkout@v3
     
     - uses: actions/setup-ruby@v1
-#      with:
-#        ruby-version: ${{ matrix.ruby }}
+      with:
+        ruby-version: '3.0'
+      bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - run: bundle exec rake
       
     - name: Selecct Xcode
       run: sudo xcode-select -switch /Applications/Xcode.app
