@@ -13,7 +13,7 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        ruby: [ '2.5', '2.6' ]
+        ruby: [ '2.7' ]
 
     env:
       PROJECT: GitHubActionsTest.xcodeproj
