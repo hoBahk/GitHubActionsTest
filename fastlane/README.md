@@ -31,6 +31,14 @@ Description of what the lane does
 
 
 
+### ios increment_build_number_do
+
+```sh
+[bundle exec] fastlane ios increment_build_number_do
+```
+
+
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
