@@ -24,11 +24,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - uses: actions/setup-ruby@v1
-      with:
-        ruby-version: '3.0'
-        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    - run: bundle exec rake
+       uses: ruby/setup-ruby@359bebbc29cbe6c87da6bc9ea3bc930432750108
+        with:
+          ruby-version: '2.7'
       
     - name: Selecct Xcode
       run: sudo xcode-select -switch /Applications/Xcode.app
