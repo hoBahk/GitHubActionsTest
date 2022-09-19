@@ -26,26 +26,31 @@ platform :ios do
   desc "Description of what the lane does"
   lane :app_build do
 
-    create_keychain(
-      name: KEYCHAIN_NAME,
-      password: KEYCHAIN_PASSWORD,
-      default_keychain: true,
-      unlock: true,
-      timeout: 3600,
-      lock_when_sleeps: false
-    )
+  #   create_keychain(
+  #     name: KEYCHAIN_NAME,
+  #     password: KEYCHAIN_PASSWORD,
+  #     default_keychain: true,
+  #     unlock: true,
+  #     timeout: 3600,
+  #     lock_when_sleeps: false
+  #   )
 
-    match(
-      keychain_name: KEYCHAIN_NAME,
-      keychain_password: KEYCHAIN_PASSWORD,
-      readonly: true
-   )
+  #   match(
+  #     keychain_name: KEYCHAIN_NAME,
+  #     keychain_password: KEYCHAIN_PASSWORD,
+  #     readonly: true
+  #  )
 
 #    swiftlint(
 #      mode: :lint,
 #      raise_if_swiftlint_error: true,
 #      ignore_exit_status: true
 #    )
+# cocoapods(
+#   clean: true,
+#   use_bundle_exec: false
+# )
+
 
     gym(
       xcargs: "-allowProvisioningUpdates",
@@ -53,9 +58,9 @@ platform :ios do
       scheme: "GitHubActionsTest"
     )
 
-    delete_keychain(
-      name: "keychainMatch"
-    )
+    # delete_keychain(
+    #   name: "keychainMatch"
+    # )
 
   end
 
@@ -86,14 +91,39 @@ increment_build_number_in_plist
   end
 
 
-#  lane :noti_slack do |options| 
-#    slack(
-#      message: "앱이 testFlight에 성공적으로 업로드 되었습니다.",
-#      channel: "#ios-team",
-#      slack_url: [슬랙hook주소],
-#      payload: {
-#        "Version": options[:version]
-#      }
-#    )
-#  end
+  # lane이 모두 완료된 뒤 호출됨
+  after_all do |lane|
+  # 9. 배포 결과 슬랙 노티 🚨
+    slack_after_lane(
+      message: "✈️ TestFlight에 성공적으로 업로드 되었습니다. ✈️",
+      payload: {
+        "Date" => Time.new.to_s
+      },
+      default_payloads: [:test_result, :lane, :git_branch, :git_author, :last_git_commit, :last_git_commit_hash]
+    )
+  end
+
+  # 에러 발생 시 호출 됨
+  error do |lane, exception|
+    # slack_when_error_occured(
+    #   message: "🚨 실패하였습니다. 🚨”,
+    #   payload: {
+    #     "Version" => lane_context[SharedValues::VERSION_NUMBER],
+    #     "Build number" => lane_context[SharedValues::BUILD_NUMBER],
+    #     "Date" => Time.new.to_s,
+    #     "Error Info" => exception.message"
+    #   }
+    # )
+
+    slack(
+      message: "🚨 Failed build and archive.🚨",
+      channel: "bh.bahk",
+      success: true,
+      payload: {
+        "Build Date" => Time.new.to_s,
+        "Error Info" => exception.message
+      },
+      default_payloads: [:test_result, :lane, :git_branch, :git_author, :last_git_commit, :last_git_commit_hash]
+    )
+  end
 end

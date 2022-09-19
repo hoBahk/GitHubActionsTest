@@ -39,9 +39,11 @@ jobs:
     - name: app_build
       run: fastlane increment_build_number_do
         
-#    - name: Upload TestFlight
-#      run: fastlane upload_testflight
-#      env:
-#        API_KEY_ID: ${{ secrets.API_KEY_ID }}
-#        API_ISSUER_ID: ${{ secrets.API_ISSUER_ID }}
-#        API_PRIVATE_KEY: ${{ secrets.API_PRIVATE_KEY }}
+    - name: build result to slack
+        uses: 8398a7/action-slack@v3
+        with:
+            status: ${{job.status}}
+            fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+            author_name: DoingLab
+        env:
+            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
