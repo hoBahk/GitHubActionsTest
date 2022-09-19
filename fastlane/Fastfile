@@ -51,7 +51,6 @@ platform :ios do
 #   use_bundle_exec: false
 # )
 
-
     gym(
       xcargs: "-allowProvisioningUpdates",
       workspace: "GitHubActionsTest.xcworkspace",
