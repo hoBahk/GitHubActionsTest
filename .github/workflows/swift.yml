@@ -36,8 +36,8 @@ jobs:
 #    - name: pod install
 #      run: pod install
 
-    - name: app_build
-      run: fastlane increment_build_number_do
+#    - name: app_build
+#      run: fastlane increment_build_number_do
         
     - name: action-slack
       uses: 8398a7/action-slack@v3
