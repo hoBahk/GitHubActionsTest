@@ -3,9 +3,6 @@ name: Swift
 on:
   push:
     branches: [ test_branch ]
-  pull_request:
-    branches: [ main ]
-
 
 jobs:
   build:
