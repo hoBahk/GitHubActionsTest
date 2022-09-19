@@ -39,11 +39,17 @@ jobs:
     - name: app_build
       run: fastlane increment_build_number_do
         
-    - name: build result to slack
-        uses: 8398a7/action-slack@v3
-        with:
-            status: ${{job.status}}
-            fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
-            author_name: DoingLab
-        env:
-            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+#    - name: build result to slack
+#        uses: 8398a7/action-slack@v3
+#        with:
+#            status: ${{job.status}}
+#            fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+#            author_name: DoingLab
+#        env:
+#            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+    - uses: actions/checkout@v2
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
