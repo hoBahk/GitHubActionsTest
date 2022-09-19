@@ -1,0 +1,49 @@
+name: Swift
+
+on:
+  push:
+    branches: [ test_branch ]
+  pull_request:
+    branches: [ main ]
+
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    env:
+      PROJECT: GitHubActionsTest.xcodeproj
+      SCHEME: GitHubActionsTest
+      CONFIGURATION: release
+      DESTINATION: platform=iOS Simulator,name=iPhone 13,OS=latest
+      MATCH_GIT_TOKEN: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
+      MATCH_PW: ${{ secrets.MATCH_PW }}
+      FASTLANE_PASSWORD_FOR: ${{ secrets.FASTLANE_PASSWORD }}
+      
+    steps:
+    - uses: actions/checkout@v3
+    
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.6
+    - run: bundle install
+      
+    - name: Selecct Xcode
+      run: sudo xcode-select -switch /Applications/Xcode.app
+
+    - name: install fastlane
+      run: brew install fastlane
+    
+    - name: pod install
+      run: pod install
+
+    - name: app_build
+      run: fastlane increment_build_number_do
+        
+#    - name: Upload TestFlight
+#      run: fastlane upload_testflight
+#      env:
+#        API_KEY_ID: ${{ secrets.API_KEY_ID }}
+#        API_ISSUER_ID: ${{ secrets.API_ISSUER_ID }}
+#        API_PRIVATE_KEY: ${{ secrets.API_PRIVATE_KEY }}
