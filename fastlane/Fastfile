@@ -94,13 +94,13 @@ increment_build_number_in_plist
   # lane이 모두 완료된 뒤 호출됨
   after_all do |lane|
   # 9. 배포 결과 슬랙 노티 🚨
-    slack_after_lane(
-      message: "✈️ TestFlight에 성공적으로 업로드 되었습니다. ✈️",
-      payload: {
-        "Date" => Time.new.to_s
-      },
-      default_payloads: [:test_result, :lane, :git_branch, :git_author, :last_git_commit, :last_git_commit_hash]
-    )
+    # slack_after_lane(
+    #   message: "✈️ TestFlight에 성공적으로 업로드 되었습니다. ✈️",
+    #   payload: {
+    #     "Date" => Time.new.to_s
+    #   },
+    #   default_payloads: [:test_result, :lane, :git_branch, :git_author, :last_git_commit, :last_git_commit_hash]
+    # )
   end
 
   # 에러 발생 시 호출 됨
@@ -115,15 +115,15 @@ increment_build_number_in_plist
     #   }
     # )
 
-    slack(
-      message: "🚨 Failed build and archive.🚨",
-      channel: "bh.bahk",
-      success: true,
-      payload: {
-        "Build Date" => Time.new.to_s,
-        "Error Info" => exception.message
-      },
-      default_payloads: [:test_result, :lane, :git_branch, :git_author, :last_git_commit, :last_git_commit_hash]
-    )
+    # slack(
+    #   message: "🚨 Failed build and archive.🚨",
+    #   channel: "bh.bahk",
+    #   success: true,
+    #   payload: {
+    #     "Build Date" => Time.new.to_s,
+    #     "Error Info" => exception.message
+    #   },
+    #   default_payloads: [:test_result, :lane, :git_branch, :git_author, :last_git_commit, :last_git_commit_hash]
+    # )
   end
 end
