@@ -1,8 +1,8 @@
-name: Swift
+name: test_branch
 
 on:
   push:
-    branches: [ test_branch ]
+    branches: [ test_branch2 ]
 
 jobs:
   build:
