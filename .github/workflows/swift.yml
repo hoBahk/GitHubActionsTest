@@ -52,7 +52,7 @@ on:
     branches: [ test_branch ]
 
 jobs:
-  build:
+  buildd:
     runs-on: macos-latest
     env:
       WORKSPACE: NextDietCamera.xcworkspace
